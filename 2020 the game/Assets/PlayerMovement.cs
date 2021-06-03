@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
         running = running.GetComponent<BoxCollider2D>();
         slide = slide.GetComponent<BoxCollider2D>();
         jump = jump.GetComponent<BoxCollider2D>();
+        // deactivate slide and jump colliders 
+        slide.enabled = false;
+        jump.enabled = false;
     }
 
     void Update()
@@ -45,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
             // turn off running boxcollider and turn on jump NOTE: sleep.thread can be used to change back to running
             jump.enabled = true;
             running.enabled = false;
+        }
+        else
+        {
+            jump.enabled = false;
+            running.enabled = true;
         }
 
         // allow player to slide if grounded
