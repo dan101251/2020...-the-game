@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Jump();
-        slide.enabled = false;
-        jump.enabled = false; 
+
     }
 
     void Jump()
